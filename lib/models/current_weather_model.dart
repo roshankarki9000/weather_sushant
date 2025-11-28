@@ -21,6 +21,7 @@ class CurrentWeatherModel {
     required this.sunset,
   });
 
+  // Manual fromJson - Parse API response to model
   factory CurrentWeatherModel.fromJson(Map<String, dynamic> json) {
     final current = json['current'];
     final daily = json['daily'];
@@ -36,5 +37,31 @@ class CurrentWeatherModel {
       sunrise: daily['sunrise'][0] ?? '',
       sunset: daily['sunset'][0] ?? '',
     );
+  }
+
+String getFormattedSunrise() {
+    try {
+      final dateTime = DateTime.parse(sunrise).toLocal();
+      final hour = dateTime.hour;
+      final minute = dateTime.minute.toString().padLeft(2, '0');
+      final period = hour >= 12 ? 'PM' : 'AM';
+      final displayHour = hour > 12 ? hour - 12 : (hour == 0 ? 12 : hour);
+      return '$displayHour:$minute $period';
+    } catch (e) {
+      return sunrise;
+    }
+  }
+
+  String getFormattedSunset() {
+    try {
+      final dateTime = DateTime.parse(sunset).toLocal();
+      final hour = dateTime.hour;
+      final minute = dateTime.minute.toString().padLeft(2, '0');
+      final period = hour >= 12 ? 'PM' : 'AM';
+      final displayHour = hour > 12 ? hour - 12 : (hour == 0 ? 12 : hour);
+      return '$displayHour:$minute $period';
+    } catch (e) {
+      return sunset;
+    }
   }
 }
