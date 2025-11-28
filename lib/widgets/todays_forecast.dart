@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/widgets/hourly_weather.dart';
 
+//! This widget is for today card below house.png which shows hourly forecast
 class TodayForecastCard extends StatelessWidget {
   final String currentDate;
   final List<Map<String, dynamic>> hourlyData;
@@ -14,7 +15,7 @@ class TodayForecastCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
-      offset: Offset(0, -30),
+      offset: Offset(0, -35),
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -48,7 +49,7 @@ class TodayForecastCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: hourlyData.map((data) {
-                return HourlyWeatherItem(
+                return HourlyWeather(
                   temperature: data['temperature'],
                   time: data['time'],
                   weatherCode: data['weatherCode'],

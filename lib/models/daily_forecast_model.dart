@@ -13,6 +13,7 @@ class DailyForecastModel {
     required this.precipitation,
   });
 
+//! Manual factory constructor to parse JSON data
   factory DailyForecastModel.fromJson(Map<String, dynamic> json, int index) {
     return DailyForecastModel(
       date: json['time'][index] ?? '',
@@ -23,6 +24,7 @@ class DailyForecastModel {
     );
   }
 
+//! to get day name from date
   String getDayName() {
     try {
       final dateTime = DateTime.parse(date);
@@ -33,10 +35,10 @@ class DailyForecastModel {
     }
   }
 
+//!get list of daily forecast from JSON
   static List<DailyForecastModel> listFromJson(Map<String, dynamic> json) {
     final List<DailyForecastModel> forecasts = [];
     final daily = json['daily'];
-
 
     for (int i = 0; i < 7; i++) {
       forecasts.add(DailyForecastModel.fromJson(daily, i));

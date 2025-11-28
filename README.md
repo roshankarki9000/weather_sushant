@@ -1,16 +1,41 @@
-# weather_app
+# Flutter Weather App
 
-A new Flutter project.
+A simple, cross-platform Flutter weather application that shows current weather and forecast for a chosen location.
 
-## Getting Started
+## Technologies
 
-This project is a starting point for a Flutter application.
+- Flutter (Dart)
+- Provider (for State Management)
+- Dio (for API calls)
+- open-meteo.com API
 
-A few resources to get you started if this is your first Flutter project:
+## Quickstart / How to clone and run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone the repository:
+   git clone https://github.com/roshankarki9000/weather_sushant.git
+2. Change directory:
+   cd weather_sushant
+3. Install dependencies:
+   flutter pub get
+4. Run on a connected device or emulator:
+   flutter run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project structure (example)
+
+- lib/
+  - main.dart
+  -app_colors.dart
+  - screens/
+  - widgets/
+  - services/ (API client)
+  - models/
+  - providers/
+  - utils/
+- assets/
+
+## Screenshots
+
+![App Screenshot](assets/splash.jpeg)
+![App Screenshot](assets/home.jpeg)
+![App Screenshot](assets/detail.jpeg)
+

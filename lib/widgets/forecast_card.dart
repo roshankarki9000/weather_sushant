@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/app_colors.dart';
 import 'package:weather_app/utils/weather_utils.dart';
 
+//! This widgets is for 7 Day Forecast Card on Detail Screen
 
-class ForecastCardItem extends StatelessWidget {
+class ForecastCard extends StatelessWidget {
   final dynamic day;
 
-  const ForecastCardItem({super.key, required this.day});
+  const ForecastCard({super.key, required this.day});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class ForecastCardItem extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Color(0xFF7C6FDC), Color(0xFFB17EE8)],
+          colors: [AppColors.primaryPurple,AppColors.primarylightPurple],
         ),
         borderRadius: BorderRadius.circular(30),
       ),

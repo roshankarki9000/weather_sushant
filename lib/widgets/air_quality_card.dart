@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//! This widget is for Air Quality Card on Detail Screen
 class AirQualityCard extends StatelessWidget {
   const AirQualityCard({super.key});
 

@@ -11,6 +11,7 @@ class HourlyForecastModel {
     required this.precipitation,
   });
 
+  //! Manual factory constructor to parse JSON data
   factory HourlyForecastModel.fromJson(Map<String, dynamic> json, int index) {
     return HourlyForecastModel(
       time: json['time'][index] ?? '',
@@ -20,7 +21,6 @@ class HourlyForecastModel {
     );
   }
 
-  // Get hour in 24-hour format (15:00)
   String getHour24() {
     try {
       final dateTime = DateTime.parse(time);
@@ -29,6 +29,8 @@ class HourlyForecastModel {
       return time;
     }
   }
+
+  //!get list of hourly forecast from JSON
 
   static List<HourlyForecastModel> listFromJson(Map<String, dynamic> json) {
     final List<HourlyForecastModel> hourlyList = [];

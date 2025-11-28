@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/utils/weather_utils.dart';
 
-class HourlyWeatherItem extends StatelessWidget {
+class HourlyWeather extends StatelessWidget {
   final String temperature;
   final String time;
   final int weatherCode;
 
-  const HourlyWeatherItem({
+  const HourlyWeather({
     super.key,
     required this.temperature,
     required this.time,

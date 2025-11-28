@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//! This widget is for two cards below Air Quality in Detail Screen
 class InfoCard extends StatelessWidget {
   final IconData icon;
   final String title;

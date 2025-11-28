@@ -7,7 +7,7 @@ class WeatherService {
   final Dio _dio = Dio();
 
   static const String _apiUrl =
-      'https://api.open-meteo.com/v1/forecast?latitude=26.5455&longitude=87.8942&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset&hourly=temperature_2m,weather_code,precipitation&current=temperature_2m,weather_code,precipitation,relative_humidity_2m,wind_speed_10m';
+      'https://api.open-meteo.com/v1/forecast?latitude=26.5455&longitude=87.8942&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,sunrise,sunset&hourly=temperature_2m,weather_code,precipitation&current=temperature_2m,precipitation,weather_code&timezone=auto';
 
   WeatherService() {
     _dio.options = BaseOptions(
@@ -17,6 +17,7 @@ class WeatherService {
     );
   }
 
+//! Get weather data if not then return error
   Future<Map<String, dynamic>> getCompleteWeatherData() async {
     try {
       final response = await _dio.get(_apiUrl);
@@ -43,6 +44,7 @@ class WeatherService {
     }
   }
 
+//!These are Dio Errors for above function
   String _handleDioError(DioException error) {
     switch (error.type) {
       case DioExceptionType.connectionTimeout:

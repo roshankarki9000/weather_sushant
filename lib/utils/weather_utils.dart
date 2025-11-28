@@ -1,6 +1,6 @@
 class WeatherUtils {
   static String getWeatherEmoji(int weatherCode) {
-    //! Weather Codes from API (last in docs)
+    //! Weather Codes from API (in docs)
     if (weatherCode == 0) return '☀️';
     if (weatherCode >= 1 && weatherCode <= 3) return '⛅';
     if (weatherCode >= 45 && weatherCode <= 48) return '🌫️';

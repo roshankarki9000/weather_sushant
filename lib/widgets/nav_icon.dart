@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//! This widget is for Navugation Icons n HomeScereen
 class NavIcon extends StatelessWidget {
   final IconData icon;
   final VoidCallback? onTap;
